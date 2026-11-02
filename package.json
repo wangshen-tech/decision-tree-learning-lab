@@ -1,0 +1,37 @@
+{
+  "name": "decision-tree-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "python3 scripts/package_sources.py && tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run tests/tree.test.ts",
+    "test:ui": "playwright test",
+    "format": "prettier --write src tests *.ts *.json *.html"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "4.1.14",
+    "katex": "0.16.22",
+    "lucide-react": "0.468.0",
+    "prismjs": "1.30.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "tailwindcss": "4.1.14"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/katex": "0.16.7",
+    "@types/node": "22.18.10",
+    "@types/prismjs": "1.26.5",
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.4",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "vite": "7.1.9",
+    "vitest": "3.2.4"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "seed": 42,
+  "noise": 0.08,
+  "min_leaf": 3,
+  "criterion": "gini",
+  "shapes": {
+    "X": [
+      240,
+      2
+    ],
+    "y": [
+      240
+    ],
+    "train": 144,
+    "validation": 48,
+    "test": 48
+  },
+  "first_row": [
+    0.02643892541527748,
+    6.60311977379024
+  ],
+  "first_label": 0,
+  "selected_depth": 4,
+  "experiments": [
+    {
+      "depth": 1,
+      "train_accuracy": 0.7569444444444444,
+      "validation_accuracy": 0.6666666666666666,
+      "leaves": 2
+    },
+    {
+      "depth": 2,
+      "train_accuracy": 0.7708333333333334,
+      "validation_accuracy": 0.6041666666666666,
+      "leaves": 4
+    },
+    {
+      "depth": 3,
+      "train_accuracy": 0.8819444444444444,
+      "validation_accuracy": 0.875,
+      "leaves": 7
+    },
+    {
+      "depth": 4,
+      "train_accuracy": 0.9027777777777778,
+      "validation_accuracy": 0.8958333333333334,
+      "leaves": 13
+    },
+    {
+      "depth": 5,
+      "train_accuracy": 0.9027777777777778,
+      "validation_accuracy": 0.8958333333333334,
+      "leaves": 16
+    },
+    {
+      "depth": 6,
+      "train_accuracy": 0.9166666666666666,
+      "validation_accuracy": 0.8541666666666666,
+      "leaves": 19
+    },
+    {
+      "depth": 7,
+      "train_accuracy": 0.9166666666666666,
+      "validation_accuracy": 0.8541666666666666,
+      "leaves": 21
+    },
+    {
+      "depth": 8,
+      "train_accuracy": 0.9166666666666666,
+      "validation_accuracy": 0.8541666666666666,
+      "leaves": 22
+    }
+  ],
+  "root": {
+    "feature": 1,
+    "threshold": 5.776497272308916,
+    "impurity": 0.4721257716049383,
+    "gain": 0.11380468989772996
+  },
+  "scratch_test": {
+    "accuracy": 0.9166666666666666,
+    "precision": 1.0,
+    "recall": 0.7894736842105263,
+    "f1": 0.8823529411764706,
+    "confusion_matrix": [
+      [
+        29,
+        0
+      ],
+      [
+        4,
+        15
+      ]
+    ]
+  },
+  "sklearn_test": {
+    "accuracy": 0.9166666666666666,
+    "precision": 1.0,
+    "recall": 0.7894736842105263,
+    "f1": 0.8823529411764706,
+    "confusion_matrix": [
+      [
+        29,
+        0
+      ],
+      [
+        4,
+        15
+      ]
+    ]
+  },
+  "majority_test_accuracy": 0.6041666666666666,
+  "sample_prediction": {
+    "X": [
+      [
+        8.0,
+        6.0
+      ]
+    ],
+    "class": 1,
+    "probability": [
+      0.0,
+      1.0
+    ]
+  }
+}
