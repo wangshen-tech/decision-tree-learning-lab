@@ -40,6 +40,12 @@ test("split search, growth, depth experiments, and prediction controls work", as
 }) => {
   await page.goto("/#intuition");
   const before = await page.locator(".rule").innerText();
+  await page
+    .getByRole("slider", { name: "Threshold", exact: true })
+    .fill("0.5");
+  await expect(
+    page.getByRole("status").filter({ hasText: "Invalid training split" }),
+  ).toContainText("Invalid training split");
   await page.getByRole("button", { name: "Find the best split" }).click();
   expect(await page.locator(".rule").innerText()).not.toBe(before);
   await page.goto("/#algorithm");

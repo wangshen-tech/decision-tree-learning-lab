@@ -93,13 +93,31 @@ export function Scatter({
       ))}
       {split && (
         <>
-          <rect
-            x="54"
-            y="42"
-            width={split.feature === 0 ? split.threshold * 38 : 380}
-            height={split.feature === 0 ? 280 : (10 - split.threshold) * 28}
-            fill={split.feature === 0 ? "#dcebe070" : "#f6dfca70"}
-          />
+          {[split.left, split.right].map((rows, side) => (
+            <rect
+              key={side}
+              x={split.feature === 0 && side === 1 ? x(split.threshold) : 54}
+              y={split.feature === 1 && side === 0 ? y(split.threshold) : 42}
+              width={
+                split.feature === 0
+                  ? (side === 0 ? split.threshold : 10 - split.threshold) * 38
+                  : 380
+              }
+              height={
+                split.feature === 1
+                  ? (side === 0 ? split.threshold : 10 - split.threshold) * 28
+                  : 280
+              }
+              fill={
+                !rows.length
+                  ? "transparent"
+                  : rows.reduce((sum, row) => sum + row.label, 0) >
+                      rows.length / 2
+                    ? "#f6dfca"
+                    : "#dcebe0"
+              }
+            />
+          ))}
           <line
             x1={split.feature === 0 ? x(split.threshold) : 54}
             y1={split.feature === 0 ? 42 : y(split.threshold)}

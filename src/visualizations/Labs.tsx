@@ -41,8 +41,9 @@ export function SplitLab() {
           <Legend />
           <Scatter data={demoData} split={split} />
           <p className="figure-caption">
-            Every point is an observation. Move the threshold and watch the
-            class mixture change.
+            Points show observed labels. Each shaded region predicts its child’s
+            majority class; ties choose normal. Empty children have no
+            prediction.
           </p>
         </div>
         <div className="controls">
@@ -86,6 +87,12 @@ export function SplitLab() {
           <div className="rule">
             {featureNames[feature]} ≤ {threshold.toFixed(2)}?
           </div>
+          {(!split.left.length || !split.right.length) && (
+            <p className="small-copy" role="status">
+              Invalid training split: one child is empty. Move the threshold
+              inside the observed range.
+            </p>
+          )}
           <div className="child-stats">
             {[split.left, split.right].map((rows, i) => (
               <div key={i}>
